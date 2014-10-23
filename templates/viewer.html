@@ -1,0 +1,10 @@
+{{ define "body" }}
+<div class="container">
+  <h2>Blog of {{ .user }}</h2>
+  <ul>
+    {{ range .blogs }}
+    <li><a href="/view/{{ .Author }}/{{ .Name }}">{{ .Title }}</a> <span class="text-muted">({{ .Published }})</span></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

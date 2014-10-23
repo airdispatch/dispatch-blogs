@@ -1,0 +1,60 @@
+{{ define "body" }}
+<div class="container">
+  <br/>
+  <div class="well well-lg">
+    <h2>Dispatch Blogs</h2>
+    <br/>
+    <form class="form" action="/goto">
+      <div class="form-group">
+        <div class="input-group">
+          <input
+             name="address"
+             type="email"
+             placeholder="Any AirDispatch Address"
+             class="form-control">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+              Go
+            </button>
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <p>Dispatch Blogs hosts blogs created from content
+    on the <a href="http://airdispat.ch">AirDispatch</a>
+    network. Content is securely downloaded and displayed
+    here. Currently, only content from the "Notes" plugin
+    is utilized here. We will be expanding into other
+    types of content as time goes on.
+  </p>
+  <p>You can type any AirDispatch address in the form
+    above to view that person's blog.
+  </p>
+  <hr/>
+  <div class="row">
+    <div class="col-sm-6">
+      <h4>Most Popular Blogs</h4>
+      <ul class="list-unstyled">
+        <li><a href="/view/hleath@airdispatch.me">
+            hleath@airdispatch.me
+        </a></li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <h4>Other Links</h4>
+      <ul class="list-unstyled">
+        <li><a href="http://airdispat.ch">
+            AirDispatch Project
+        </a></li>
+        <li><a href="http://getmelange.com">
+            Melange Client
+        </a></li>
+        <li><a href="http://github.com/melange-app/plugin-notes">
+            Notes Plugin
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,10 @@
+{{ define "body" }}
+<div class="container">
+  <h2>{{ .post.Title }} <small>{{ .post.Published }}</small></h2>
+  <h5>by {{ .post.Author }}</h5>
+  <hr/>
+  {{ .post.Body }}
+  <hr/>
+  <a href="/view/{{ .post.Author }}">See more of {{ .post.Author }}</a>
+</div>
+{{ end }}
