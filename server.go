@@ -8,6 +8,7 @@ import (
 	"airdispat.ch/server"
 	"airdispat.ch/wire"
 	"fmt"
+	"flag"
 	"getmelange.com/router"
 	"github.com/airdispatch/go-pressure"
 	"github.com/russross/blackfriday"
@@ -18,8 +19,13 @@ import (
 )
 
 func main() {
-	s := pressure.CreateServer(":8000", true)
+	var (
+		port = flag.Int("port", 0, "port to run the server on")
+	)
+	flag.Parse()
 
+	portString := fmt.Sprintf(":%d", *port)
+	s := pressure.CreateServer(portString, true)
 	id, err := identity.CreateIdentity()
 	if err != nil {
 		panic(err)
