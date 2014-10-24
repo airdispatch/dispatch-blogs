@@ -9,9 +9,9 @@
         <div class="input-group">
           <input
              name="address"
-             type="email"
-             placeholder="Any AirDispatch Address"
-             class="form-control">
+             type="text"
+             class="form-control"
+             placeholder="Any AirDispatch Address">
           <span class="input-group-btn">
             <button type="submit" class="btn btn-default">
               Go
@@ -36,9 +36,16 @@
     <div class="col-sm-6">
       <h4>Most Popular Blogs</h4>
       <ul class="list-unstyled">
-        <li><a href="/view/hleath@airdispatch.me">
-            hleath@airdispatch.me
-        </a></li>
+        {{ range .top }}
+        {{ if ne .Address "" }}
+        <li>
+          <a href="/view/{{ .Address }}">
+            {{ .Address }}
+          </a>
+          <small class="text-muted">({{ .Views }})</small>
+        </li>
+        {{ end }}
+        {{ end }}
       </ul>
     </div>
     <div class="col-sm-6">
